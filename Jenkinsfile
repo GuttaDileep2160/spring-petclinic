@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         imagename = 'spring-petclinic'
-        registryCredential = 'yenigul-dockerhub'
         dockerImage = ''
+        CONTAINER_ID = ''
     }
     tools {
         maven 'Maven'
@@ -17,9 +17,8 @@ pipeline {
         }
         stage('Build docker image') {
             steps {
-                script {
-                        dockerImage = docker.build imagename:${BUILD_NUMBER}
-                }
+                sh 'cd /var/lib/jenkins/workspace/project-pipeline'
+                sh 'docker build -t coit-backend1:${BUILD_ID} .'            
             }
         }
     }
