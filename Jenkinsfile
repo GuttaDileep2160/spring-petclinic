@@ -1,9 +1,13 @@
 pipeline{
     agent any
+    tools{
+        maven 'Maven'
+    }
     stages{
-        stage("Checkout"){
+        stage("Build"){
             steps{
-                echo "from the checkout stage"
+                sh 'cd /project-pipeline/src'
+                sh 'mvn install'
             }
         }
        
