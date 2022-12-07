@@ -35,6 +35,7 @@ pipeline {
             steps {
                 script{
                     sh "docker run -d -p 9090:8080 ${imagename}:${BUILD_ID}"
+                    
                 }
               
               
@@ -44,7 +45,7 @@ pipeline {
     post{
         success{
             sh "pwd"
-            archiveArtifacts artifacts: '**/target', followSymlinks: false
+            archiveArtifacts artifacts: '**/target/*.jar', followSymlinks: false
         }
         
    }
