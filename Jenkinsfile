@@ -17,19 +17,26 @@ pipeline {
         }
         stage('Build docker image') {
             steps {
-                sh 'cd /var/lib/jenkins/workspace/project-pipeline'
-                sh "docker build -t ${imagename}:${BUILD_ID} ."
+                script{
+                    sh 'cd /var/lib/jenkins/workspace/project-pipeline'
+                    sh "docker build -t ${imagename}:${BUILD_ID} ."
+                }
             }
         }
         stage('Push docker image') {
             steps {
-                sh "docker tag ${imagename}:${BUILD_ID} ${dockerRegistry}:${BUILD_ID}"
-                sh "docker push ${dockerRegistry}:${BUILD_ID}"
+                script{
+                    sh "docker tag ${imagename}:${BUILD_ID} ${dockerRegistry}:${BUILD_ID}"
+                    sh "docker push ${dockerRegistry}:${BUILD_ID}"
+                }
             }
         }
         stage('Deploy') {
             steps {
-              sh "docker run -d -p 9090:8080 ${imagename}:${BUILD_ID}"
+                script{
+                    sh "docker run -d -p 9090:8080 ${imagename}:${BUILD_ID}"
+                }
+              
               
             }
         }
