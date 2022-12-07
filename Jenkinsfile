@@ -43,6 +43,7 @@ pipeline {
     }
     post{
         success{
+            sh "pwd"
             archiveArtifacts artifacts: '**/target', followSymlinks: false
         }
         
