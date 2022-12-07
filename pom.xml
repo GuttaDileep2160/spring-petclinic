@@ -239,12 +239,12 @@
 		<repository>
 			<id>springpetclinic-release</id>
 			<name>springpetclinic-release</name>
-			<url>https://3.236.193.176:8081/repository/springpetclinic-release/</url>
+			<url>https://18.207.111.27:8081/repository/springpetclinic-release/</url>
 		</repository>
 		<snapshotRepository>
 			<id>springpetclinic-snapshot</id>
 			<name>springpetclinic-snapshot</name>
-			<url>https://3.236.193.176:8081/repository/springpetclinic-snapshot/</url>
+			<url>https://18.207.111.27:8081/repository/springpetclinic-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
