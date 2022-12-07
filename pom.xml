@@ -237,14 +237,14 @@
 
   <distributionManagement>
 		<repository>
-			<id>spring-release</id>
-			<name>spring-release</name>
-			<url>https://43.205.212.86:8081/repository/spring-release/</url>
+			<id>springpetclinic-release</id>
+			<name>springpetclinic-release</name>
+			<url>http://3.236.193.176:8081/repository/springpetclinic-release/</url>
 		</repository>
 		<snapshotRepository>
-			<id>spring-snapshot</id>
-			<name>spring-snapshot</name>
-			<url>https://43.205.212.86:8081/repository/spring-snapshot/</url>
+			<id>springpetclinic-snapshot</id>
+			<name>springpetclinic-snapshot</name>
+			<url>http://3.236.193.176:8081/repository/springpetclinic-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>
 

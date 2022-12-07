@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn install; pwd'
+                sh 'mvn deploy; pwd'
             }
         }
         stage('Build docker image') {
