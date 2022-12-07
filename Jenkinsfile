@@ -41,4 +41,10 @@ pipeline {
             }
         }
     }
+    post{
+        success{
+            archiveArtifacts artifacts: '**/target', followSymlinks: false
+        }
+        
+   }
 }
