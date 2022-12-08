@@ -33,14 +33,14 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                script{
+                
                     sh "docker run -d -p 9090:8080 ${imagename}:${BUILD_ID}"
                     sh "sleep 10"
                     sh 'docker ps'
                     sh "CONTAINER_ID=`docker ps | grep java | awk '{print $1}'`"
-                    sh 'echo $CONTAINER_ID'
-                    sh 'docker stop $CONTAINER_ID'
-                }
+                    sh "echo $CONTAINER_ID"
+                    sh "docker stop $CONTAINER_ID"
+                
               
               
             }
